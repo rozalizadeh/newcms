@@ -6,14 +6,14 @@ use App\Controller\RegisterController;
 
 require_once 'helper.php';
 
-SimpleRouter::get('/', function() {
+SimpleRouter::get('/', function () {
     return 'Hello world';
 });
 
 SimpleRouter::get('/register', 'RegisterController@formRegister');
 SimpleRouter::post('/register', 'RegisterController@createAccount');
 
-SimpleRouter::get('/pages/create', function() {
+SimpleRouter::get('/pages/create', function () {
     return view('pages.create');
 });
 
@@ -40,8 +40,13 @@ SimpleRouter::get('/dashboard/menus', 'MenuController@show');
 SimpleRouter::get('/dashboard/menus/create', 'MenuController@create');
 SimpleRouter::post('/dashboard/menus/create', 'MenuController@storeCreate');
 
+//------ Dashboard Blog --------
+SimpleRouter::get('/dashboard/blogs', 'BlogController@show');
+SimpleRouter::get('/dashboard/blogs/create', 'BlogController@create');
+SimpleRouter::post('/dashboard/blogs/create', 'BlogController@storeCreate');
 
 SimpleRouter::get('/test', 'MenuController@show');
 
 SimpleRouter::get('/menu', 'PageController@show');
+
 
