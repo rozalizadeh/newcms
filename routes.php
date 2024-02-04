@@ -44,6 +44,10 @@ SimpleRouter::post('/dashboard/menus/create', 'MenuController@storeCreate');
 SimpleRouter::get('/dashboard/blogs', 'BlogController@show');
 SimpleRouter::get('/dashboard/blogs/create', 'BlogController@create');
 SimpleRouter::post('/dashboard/blogs/create', 'BlogController@storeCreate');
+SimpleRouter::get('/dashboard/blogs/{id}/delete', 'BlogController@deleteBlog');
+SimpleRouter::get('dashboard/blogs/edit/{id}', 'BlogController@edit');
+SimpleRouter::Post('dashboard/blogs/edit/{id}', 'BlogController@update');
+SimpleRouter::get('dashboard/blogs/{id}/viewContent', 'BlogController@viewContent');
 
 SimpleRouter::get('/test', 'MenuController@show');
 
